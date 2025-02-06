@@ -17,7 +17,7 @@ const ParticlesDemo = () => {
 
   return (
     <div className="bg-gradient-to-b from-zinc-700 to-zinc-900 relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl">
-      <span className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-gray-700/80 to-white bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+      <span className="select-none pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-gray-700/80 to-white bg-clip-text text-center text-5xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
       Visionary AI
 
       </span>

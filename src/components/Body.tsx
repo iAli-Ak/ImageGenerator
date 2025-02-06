@@ -56,21 +56,28 @@ export default function AIImageTool() {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <div className="flex items-center justify-center space-x-2 mb-8">
-        <div className="relative inline-flex items-center bg-gray-200 rounded-full p-1 cursor-pointer" onClick={() => setMode(mode === 'generate' ? 'detect' : 'generate')}>
-          <div 
-            className={`absolute w-1/2 h-full bg-blue-500 rounded-full transition-transform duration-300 ease-in-out ${
-              mode === 'detect' ? 'translate-x-full' : ''
-            }`} 
-          />
-          <div className={`relative px-3 py-1 rounded-full transition-colors duration-300 ease-in-out ${mode === 'generate' ? 'text-white' : 'text-gray-700'}`}>
-            Generate
-          </div>
-          <div className={`relative px-3 py-1 rounded-full transition-colors duration-300 ease-in-out ${mode === 'detect' ? 'text-white' : 'text-gray-700'}`}>
-            Detect
-          </div>
+      <div className="flex items-center justify-center space-x-2 mb-10">
+      <div
+        className="relative inline-flex items-center bg-zinc-800 rounded-full p-1 cursor-pointer"
+        onClick={() => setMode(mode === "generate" ? "detect" : "generate")}
+      >
+        <div
+          className={`absolute w-1/2 h-full bg-white rounded-full transition-transform duration-300 ease-in-out ${
+            mode === "detect" ? "translate-x-full" : ""
+          }`}
+        />
+        <div
+          className={`relative px-3 py-1 rounded-full transition-colors duration-300 ease-in-out ${mode === "generate" ? "text-black" : "text-white"}`}
+        >
+          Generate
+        </div>
+        <div
+          className={`relative px-3 py-1 rounded-full transition-colors duration-300 ease-in-out ${mode === "detect" ? "text-black" : "text-white"}`}
+        >
+          Detect
         </div>
       </div>
+    </div>
 
       {mode === 'generate' ? (
         <div className="space-y-4">
@@ -80,7 +87,7 @@ export default function AIImageTool() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
           />
-          <Button onClick={handleGenerate} disabled={isLoading || !prompt}>
+          <Button onClick={handleGenerate} className='mt-5 bg-gray-400' disabled={isLoading || !prompt}>
             {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Generate'}
           </Button>
           {isLoading && <Progress value={33} className="w-full" />}
